@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Switch, Route} from 'react-router-dom'
+import axios from 'axios'
 import * as Yup from 'yup'
 import Header from './Components/Header'
 import OrderForm from './Components/OrderForm'
@@ -65,8 +66,21 @@ const App = () => {
       special: formValues.special,
       toppings: Object.keys(formValues.toppings).filter(topping => (formValues.toppings[topping] === true))
     }
+    postNewOrder(newOrder)
     console.log(newOrder)
     setFormValues(defaultFormValues)
+  }
+  const postNewOrder = (newOrder) => {
+    axios.post(`https://reqres.in/api/users`, JSON.stringify(newOrder))
+    .then((response) =>{
+      console.log('response', response)
+    })
+    .catch(error=>{
+    console.error('error', error);
+    })
+    .finally(()=>{
+      setFormValues(defaultFormValues)
+    })
   }
 
   useEffect(() => {
