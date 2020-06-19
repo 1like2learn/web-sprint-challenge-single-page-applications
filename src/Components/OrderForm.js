@@ -2,7 +2,7 @@ import React from 'react'
 // import axios from 'axios'
 
 const OrderForm = props => {
-    const { orderInput, values, onSubmit, orderCheckboxInput } = props
+    const { orderInput, values, onSubmit, orderCheckboxInput, submitDisabled } = props
 
     return(
         <div>
@@ -86,7 +86,7 @@ const OrderForm = props => {
                         type='text'
                         ></input>
                     </label>
-                <button>Submit</button>
+                <button disabled={submitDisabled}>Submit</button>
             </form>
         </div>
     )
