@@ -6,7 +6,14 @@ import OrderForm from './Components/OrderForm'
 const defaultFormValues = {
   name: '',
   size: '',
-  toppings: [],
+  toppings: {
+    pepperoni: false,
+    sausage: false,
+    greenPeppers: false,
+    onions: false,
+    mushrooms: false,
+
+  },
   special: '',
 }
 const App = () => {
@@ -31,7 +38,14 @@ const App = () => {
   }
   const onSubmit = event => {
     event.preventDefault()
-
+    const newOrder = {
+      name: formValues.name.trim(),
+      size: formValues.size,
+      special: formValues.special,
+      toppings: Object.keys(formValues.toppings).filter(topping => (formValues.toppings[topping] === true))
+    }
+    console.log(newOrder)
+    setFormValues(defaultFormValues)
   }
 
   return (

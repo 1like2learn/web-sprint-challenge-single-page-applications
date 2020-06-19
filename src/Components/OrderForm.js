@@ -35,40 +35,50 @@ const OrderForm = props => {
                     </select>
                 </label>
                 <label> Toppings&nbsp;
-                    <input
-                        name='pepperoni'
-                        type=''
-                        onChange={orderCheckboxInput}
-                        checked={values.toppings.pepperoni}
+                    <label>Pepperoni:&nbsp;
+                        <input
+                            name='pepperoni'
+                            type='checkbox'
+                            onChange={orderCheckboxInput}
+                            checked={values.toppings.pepperoni}
 
-                    ></input>
-                    <input
-                        name='sausage'
-                        type=''
-                        onChange={orderCheckboxInput}
-                        checked={values.toppings.sausage}
+                        ></input>
+                    </label>
+                    <label>Sausage:&nbsp;
+                        <input
+                            name='sausage'
+                            type='checkbox'
+                            onChange={orderCheckboxInput}
+                            checked={values.toppings.sausage}
 
-                    ></input>
-                    <input
-                        name='greenPeppers'
-                        type=''
-                        onChange={orderCheckboxInput}
-                        checked={values.toppings.greenPeppers}
+                        ></input>
+                    </label>
+                    <label>Green Peppers:&nbsp;
+                        <input
+                            name='greenPeppers'
+                            type='checkbox'
+                            onChange={orderCheckboxInput}
+                            checked={values.toppings.greenPeppers}
 
-                    ></input>
-                    <input
-                        name='onions'
-                        type=''
-                        onChange={orderCheckboxInput}
-                        checked={values.toppings.onions}
+                        ></input>
+                    </label>
+                    <label>Onions:&nbsp;
+                        <input
+                            name='onions'
+                            type='checkbox'
+                            onChange={orderCheckboxInput}
+                            checked={values.toppings.onions}
 
-                    ></input>
-                    <input
-                        name='mushrooms'
-                        type=''
-                        onChange={orderCheckboxInput}
-                        checked={values.toppings.mushrooms}
-                    ></input>
+                        ></input>
+                    </label>
+                    <label>Mushrooms:&nbsp;
+                        <input
+                            name='mushrooms'
+                            type='checkbox'
+                            onChange={orderCheckboxInput}
+                            checked={values.toppings.mushrooms}
+                        ></input>
+                    </label>
                 </label>
                     <label>Special Instructions:&nbsp;
                         <input 
